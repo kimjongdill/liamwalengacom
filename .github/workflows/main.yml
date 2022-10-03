@@ -30,8 +30,8 @@ jobs:
       - name: Copy package to S3 on AWS
         uses: qualitia-cdev/copy-to-s3@0.0.2
         with: 
-          aws-access-key: ${{ $AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ $AWS_SECRET_ACCESS_KEY }}
+          aws-access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
           source-dir: ./src
           service-name: liam-walenga-com
