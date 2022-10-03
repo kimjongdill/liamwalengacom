@@ -35,5 +35,4 @@ jobs:
           aws-region: us-east-2
           source-dir: ./src
           service-name: liam-walenga-com
-          target-dir: /
       
