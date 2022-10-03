@@ -23,8 +23,8 @@ jobs:
     # Environment
     environment: deployment
     env: 
-      aws-access-key: ${{ env.AWS_ACCESS_KEY_ID }}
-      aws-secret-access-key: ${{ env.AWS_SECRET_ACCESS_KEY }}
+      aws-access-key: ${{ $AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ $AWS_SECRET_ACCESS_KEY }}
       aws-region: us-east-2
       source-dir: ./src
       service-name: liamwalengacom
