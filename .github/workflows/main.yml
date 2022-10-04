@@ -23,6 +23,6 @@ jobs:
     environment: deploy
     steps:
       - name: Copy package to S3 on AWS
-        run: aws s3 cp -r ./src s3://liam-walenga-com/
+        run: aws s3 cp ./src s3://liam-walenga-com/ --recursive
         
       
