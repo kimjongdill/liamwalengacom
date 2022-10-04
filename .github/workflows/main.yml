@@ -19,21 +19,10 @@ jobs:
   deployment:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Environment
+    container: amazon/aws-cli
     environment: deploy
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
       - name: Copy package to S3 on AWS
-        uses: qualitia-cdev/copy-to-s3@0.0.2
-        with: 
-          aws-access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-2
-          source-dir: ./src
-          service-name: liam-walenga-com
-          target-dir: /
+        run: aws s3 cp -r ./src s3://liam-walenga-com/
+        
       
