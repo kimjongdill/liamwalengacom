@@ -26,6 +26,8 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     environment: deploy
     steps:
+      - name: Install Tar
+        run: yum install -y tar
       - name: Checkout
         uses: actions/checkout@v3.1.0
       - name: Copy package to S3 on AWS
