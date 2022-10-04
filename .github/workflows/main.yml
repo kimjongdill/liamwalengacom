@@ -31,6 +31,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.1.0
       - name: Copy package to S3 on AWS
-        run: aws s3 cp ./src s3://liam-walenga-com/ --recursive
+        run: aws s3 cp ./src s3://liam-walenga-com --recursive
         
       
